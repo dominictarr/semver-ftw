@@ -9,8 +9,10 @@
   'src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"'\
   ' alt="Fork me on GitHub"></a>'
 
-  echo '<script src=http://rumoursdb.com/examples/css-colab/css-colab.js></script>'
-  echo '<script>CssColab("semver-ftw")</script>'
+# css-colab for rapid designing.
+# open in http://rumoursdb.com/example/css-colab/editor.html#semver-ftw
+#  echo '<script src=http://rumoursdb.com/examples/css-colab/css-colab.js></script>'
+#  echo '<script>CssColab("semver-ftw")</script>'
 
   echo '<style>'
 #  cat ./style.css
