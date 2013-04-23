@@ -1,4 +1,40 @@
 body {
-  margin: 50px
-  border: solid 1px;
+  background: #eee;
+  font-size: 1.1em;
+  line-height: 140%;
+ }
+
+code { font-size: 1.2em }
+
+#markdown {
+  margin: 20px auto auto; 
+  padding: 5px 40px 40px 40px;
+  width: 600px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0),0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+h1 {
+  width: 327px;
+  height: 52px;
+  background: url(./title.png) no-repeat 0 0;
+  color: transparent;
+  text-align: center;
+  margin: 40px auto 40px auto;  
+  font-size: 40px;
+  line-height: 70px;
+}
+
+h2, h3 {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
+  color: #383D3D;
+  padding-top: 25px;
+}
+
+a, a:visited { color: #CB3837; }
+
+p {
+  font-family:  'Open Sans', 'Helvetic', sans-serif;
+  padding 20px;
+}
+//collaborative web design
