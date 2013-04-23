@@ -2,7 +2,7 @@
 
 [NPM](https://npmjs.org/) packages specify versions in the semver format: `MAJOR.MINOR.PATCH` (e.g. `3.0.2`). 
 
-# When Publishing
+## When Publishing:
 
 ## Major: "breaking changes"
 Increment MAJOR version when you have removed or changed a feature,
@@ -43,7 +43,7 @@ If you wish to indicate the stability of your module,
 do so in the README, in same way that node.js does.
 [stability index](http://nodejs.org/api/documentation.html#documentation_stability_index)
 
-# When using published modules
+## When Using Published Modules
 
 Module authors need to take care to correctly express the nature of
 changes with their version number, but it is the module user's responsibility
