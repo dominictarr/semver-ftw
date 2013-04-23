@@ -2,6 +2,8 @@
 
 [NPM](https://npmjs.org/) packages specify versions in the semver format: `MAJOR.MINOR.PATCH` (e.g. `3.0.2`). 
 
+# When Publishing
+
 ## Major: "breaking changes"
 Increment MAJOR version when you have removed or changed a feature, and dependent modules must be updated to use the new version.
 
@@ -26,4 +28,56 @@ When the author goes vegetarian and eliminates the `.pepperoni()` method it shou
 
 ## What does 1.0.0 mean?
 
-Don't worry too much about using 1.0.0, it is just a number. Some consider software 'beta' when it is below 1.0.0 and 'finished' when it is above, but for small modules like those on NPM this shouldn't necessarily apply. 
+there is some disagreement about the best use of `0.x.y` range semvers.
+[see this discussion](https://github.com/dominictarr/semver-ftw/issues/2)
+I suggest pubishing your module starting at `1.0.0` and after that,
+incrementing the major version on each breaking change.
+
+If you wish to indicate the stability of your module,
+do so in the README, in same way that node.js does.
+[stability index](http://nodejs.org/api/documentation.html#documentation_stability_index)
+
+# When using published modules
+
+Module authors need to take care to correctly express the nature of
+changes with their version number, but it is the module user's responsibility
+to request sensible ranges.
+
+## DON'T
+
+Don't specify ranges that are too wide. The following may cause npm to install
+a version of a dependency that does not work with your module.
+``` js
+"dependencies" : {
+  "anything-goes":"*",
+  "greater-than": ">1",
+}
+```
+
+## DO
+
+It is best to specify modules that you _know_ work.
+
+``` js
+"dependencies" : {
+  "patches"    :"~1.3.7",
+  "major-minor":"1.4.x"
+}
+```
+
+These ranges demand specific module major and minor versions,
+but allow patches. If the author of one of these modules publishes a patch,
+and it breaks your module (and you where using the module as documented)
+Then it was their fault, and you should post an issue.
+
+## Also DO
+
+This is also good.
+
+``` js
+  "exact"      : "3.5.2"
+```
+
+This should never break, however, you will have to update your module
+when a patch is released.
+
