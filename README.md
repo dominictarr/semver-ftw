@@ -86,4 +86,8 @@ This is also good.
 
 This is the safest solution. It will almost never break.
 
-This can still break if dependencies of your dependencies are using ~ or ^.
+This can still break if dependencies of your dependencies are specified using `~` or `^` or `1.4.x`.
+
+The resulting `node_modules` can be different given the day it will be run.
+
+To ultimately solve this, you can [either commit your node_modules or use npm shrinkwrap](https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git).
