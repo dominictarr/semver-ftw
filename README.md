@@ -87,3 +87,17 @@ This is also good.
 This should never break, however, you will have to update your module
 when a patch is released.
 
+## Or even DO
+
+npm's default behavior is to install _compatible_ version:
+
+```js
+"dependencies": {
+  "compatible": "^1.33.7",
+  "major": "1.x"
+}
+```
+
+These ranges allow minor changes, including new (non-breaking features)
+which could include performance upgrades or othere interesting changes for
+your project. It is supposed to be as safe as "~" operator.
