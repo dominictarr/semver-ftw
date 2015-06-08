@@ -98,6 +98,6 @@ npm's default behavior is to install _compatible_ version:
 }
 ```
 
-These ranges allow minor changes, including new (non-breaking features)
+These ranges allow minor changes, including new (non-breaking) features
 which could include performance upgrades or othere interesting changes for
 your project. It is supposed to be as safe as "~" operator.
