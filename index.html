@@ -65,5 +65,15 @@ Then it was their fault, and you should post an issue.</p>
 </code></pre>
 <p>This should never break, however, you will have to update your module
 when a patch is released.</p>
+<h2>Or even DO</h2>
+<p>npm&#39;s default behavior is to install <em>compatible</em> version:</p>
+<pre><code class="lang-js">&quot;dependencies&quot;: {
+  &quot;compatible&quot;: &quot;^1.33.7&quot;,
+  &quot;major&quot;: &quot;1.x&quot;
+}
+</code></pre>
+<p>These ranges allow minor changes, including new (non-breaking) features
+which could include performance upgrades or othere interesting changes for
+your project. It is supposed to be as safe as &quot;~&quot; operator.</p>
 
 </div id=markdown></body></html>
