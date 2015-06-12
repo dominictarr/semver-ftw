@@ -6,21 +6,21 @@
 <style>
 </style>
 </head><body><div id=markdown>
-<h1>SemVer FTW</h1>
+<h1 id="semver-ftw">SemVer FTW</h1>
 <p><a href="https://npmjs.org/">NPM</a> packages specify versions in the semver format: <code>MAJOR.MINOR.PATCH</code> (e.g. <code>3.0.2</code>). </p>
-<h2>When Publishing:</h2>
-<h2>Major: &quot;breaking changes&quot;</h2>
+<h2 id="when-publishing-">When Publishing:</h2>
+<h2 id="major-breaking-changes-">Major: &quot;breaking changes&quot;</h2>
 <p>Increment MAJOR version when you have removed or changed a feature,
 and dependent modules will have to modified to be compatible with the new version.</p>
-<h2>Minor: &quot;new feature&quot;</h2>
+<h2 id="minor-new-feature-">Minor: &quot;new feature&quot;</h2>
 <p>Increment MINOR version when you have added a feature,
 but the module is backwards compatible.</p>
-<h2>Patch: &quot;bugfix&quot;</h2>
+<h2 id="patch-bugfix-">Patch: &quot;bugfix&quot;</h2>
 <p>Increment PATCH version when you have fixed a problem,
 but not broken or changed anything else.</p>
-<h2>the semver spec</h2>
+<h2 id="the-semver-spec">the semver spec</h2>
 <p><a href="http://semver.org">semver.org</a></p>
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <p>Suppose a new module called <code>pizza</code> gets published to NPM as version <code>0.0.1</code>. </p>
 <p>When the author of the module decides to add some new functions 
 like <code>.pepperoni()</code> it should get incremented to <code>0.1.0</code>.</p>
@@ -28,7 +28,7 @@ like <code>.pepperoni()</code> it should get incremented to <code>0.1.0</code>.<
 and the bug gets fixed it should get pushed as <code>0.1.1</code>.</p>
 <p>When the author goes vegetarian and eliminates the <code>.pepperoni()</code>
 method it should be published as <code>1.0.0</code>. </p>
-<h2>What does 1.0.0 mean?</h2>
+<h2 id="what-does-1-0-0-mean-">What does 1.0.0 mean?</h2>
 <p>there is some disagreement about the best use of <code>0.x.y</code> range semvers.
 <a href="https://github.com/dominictarr/semver-ftw/issues/2">see this discussion</a>
 I suggest pubishing your module starting at <code>1.0.0</code> and after that,
@@ -36,30 +36,33 @@ incrementing the major version on each breaking change.</p>
 <p>If you wish to indicate the stability of your module,
 do so in the README, in same way that node.js does.
 <a href="http://nodejs.org/api/documentation.html#documentation_stability_index">stability index</a></p>
-<h2>When Using Published Modules</h2>
+<h2 id="when-using-published-modules">When Using Published Modules</h2>
 <p>Module authors need to take care to correctly express the nature of
 changes with their version number, but it is the module user&#39;s responsibility
 to request sensible ranges.</p>
-<h2>DON&#39;T</h2>
+<h2 id="don-t">DON&#39;T</h2>
 <p>Don&#39;t specify ranges that are too wide. The following may cause npm to install
 a version of a dependency that does not work with your module.</p>
 <pre><code class="lang-js">&quot;dependencies&quot; : {
   &quot;anything-goes&quot;:&quot;*&quot;,
   &quot;greater-than&quot;: &quot;&gt;1&quot;,
-}</code></pre>
-<h2>DO</h2>
+}
+</code></pre>
+<h2 id="do">DO</h2>
 <p>It is best to specify modules that you <em>know</em> work.</p>
 <pre><code class="lang-js">&quot;dependencies&quot; : {
   &quot;patches&quot;    :&quot;~1.3.7&quot;,
   &quot;major-minor&quot;:&quot;1.4.x&quot;
-}</code></pre>
+}
+</code></pre>
 <p>These ranges demand specific module major and minor versions,
 but allow patches. If the author of one of these modules publishes a patch,
 and it breaks your module (and you where using the module as documented)
 Then it was their fault, and you should post an issue.</p>
-<h2>Also DO</h2>
+<h2 id="also-do">Also DO</h2>
 <p>This is also good.</p>
-<pre><code class="lang-js">  &quot;exact&quot;      : &quot;3.5.2&quot;</code></pre>
+<pre><code class="lang-js">  &quot;exact&quot;      : &quot;3.5.2&quot;
+</code></pre>
 <p>This should never break, however, you will have to update your module
 when a patch is released.</p>
 
