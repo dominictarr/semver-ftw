@@ -1,6 +1,6 @@
 #SemVer FTW
 
-[NPM](https://npmjs.org/) packages specify versions in the semver format: `MAJOR.MINOR.PATCH` (e.g. `3.0.2`). 
+[npm](https://npmjs.org/) packages specify versions in the semver format: `MAJOR.MINOR.PATCH` (e.g. `3.0.2`). 
 
 ## When Publishing:
 
@@ -21,7 +21,7 @@ but not broken or changed anything else.
 
 ## Example
 
-Suppose a new module called `pizza` gets published to NPM as version `0.0.1`. 
+Suppose a new module called `pizza` gets published to npm as version `0.0.1`. 
 
 When the author of the module decides to add some new functions 
 like `.pepperoni()` it should get incremented to `0.1.0`.
@@ -84,6 +84,10 @@ This is also good.
   "exact"      : "3.5.2"
 ```
 
-This should never break, however, you will have to update your module
-when a patch is released.
+This is the safest solution. It will almost never break.
 
+This can still break if dependencies of your dependencies are specified using `~` or `^` or `1.4.x`.
+
+The resulting `node_modules` can be different given the day it will be run.
+
+To ultimately solve this, you can [either commit your node_modules or use npm shrinkwrap](https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git).
